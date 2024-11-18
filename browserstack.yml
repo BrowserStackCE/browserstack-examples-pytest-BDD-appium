@@ -1,0 +1,24 @@
+userName: BROWSERSTACK_USERNAME
+accessKey: BROWSERSTACK_ACCESS_KEY
+framework: pytest
+app: bs://06c04df390c36d389fc3c3f8ff486388cc322b91
+
+projectName: Pytest BDD Browserstack
+buildName:  Pytest BDD build 
+
+platforms:
+  - deviceName: Samsung Galaxy S23 
+    platformVersion: 13.0
+    platformName: android
+  - deviceName: Google Pixel 7
+    platformVersion: 13.0
+    platformName: android
+  - deviceName: OnePlus 9
+    platformVersion: 11.0
+    platformName: android
+
+browserstackLocal: true 
+
+debug: false
+networkLogs: false 
+consoleLogs: errors 
