@@ -22,7 +22,7 @@ def driver():
         "platformName": "Android", 
         "platformVersion": "13.0", 
         "deviceName": "Samsung Galaxy S23",  
-        "app": "bs://06c04df390c36d389fc3c3f8ff486388cc322b91", 
+        "app": "bs://sample.app", 
         "automationName": "UiAutomator2", 
         "appiumVersion": "1.22.0",  
         "project": "Wikipedia App Tests",
