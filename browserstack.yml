@@ -1,7 +1,7 @@
 userName: BROWSERSTACK_USERNAME
 accessKey: BROWSERSTACK_ACCESS_KEY
 framework: pytest
-app: bs://sample.app
+app: bs://<app-id>
 
 projectName: Pytest BDD Browserstack
 buildName:  Pytest BDD build 
