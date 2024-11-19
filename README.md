@@ -4,40 +4,33 @@ PyTest Integration with BrowserStack for Appium.
 
 ![BrowserStack Logo](https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780)
 
-### Introduction
+# Introduction
 
-- This repository demonstrates an Appium test framework written in Pytest BDD (Behavior Driven Development). It leverages the power of Pytest and the pytest-bdd plugin to write and execute BDD-style tests for mobile applications. 
-The Appium script is designed for automating tests on the [sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk). The script has the ability to run tests sequentially or in parallel on BrowserStack.
+This repository demonstrates an Appium test framework written in Pytest BDD (Behavior Driven Development). It leverages the power of Pytest and the pytest-bdd plugin to write and execute BDD-style tests for mobile applications. 
+The Appium script is designed for automating tests on the [sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk). 
+The script has the ability to run single or parallel test on BrowserStack.
 
-### Prerequisite
+# Prerequisite
 
-- - Ensure you have Python 3.7+
+Ensure you have Python 3.7+
     
     - For Windows, download latest python version from [here](https://www.python.org/downloads/windows/) and run the installer executable
     - For Mac and Linux, run `python --version` to see what python version is pre-installed. If you want a different version download from [here](https://www.python.org/downloads/)
 
-### Repository Setup
+# Repository Setup
 
 - Clone the repository
 
-- Install dependencies 
-To install the dependencies, run the following command in project's base directory:
+- Install dependencies :
 
-- For Python 3
-
-    ```sh
+Run the following command in project's base directory:
+```sh
     pip3 install -r requirements.txt
-    ```
-
-- For Python 2
-
-    ```sh
-    pip install -r requirements.txt
-    ```
+```
 
 - Upload the Wikipedia Sample Android App
 
-Upload the [sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk) (.apk or .aab file) to BrowserStack servers using our REST API. Here is an example cURL request :
+Upload the [sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk) to BrowserStack servers using our REST API. Here is an example cURL request :
 
 ```
 curl -u "YOUR_USERNAME:YOUR_ACCESS_KEY" \
@@ -47,7 +40,7 @@ curl -u "YOUR_USERNAME:YOUR_ACCESS_KEY" \
 
 Ensure that @ symbol is prepended to the file path in the above request. Please note the `app_url` value returned in the API response. We will use this to set the application under test while configuring the test later on.
 
-### Running the test :
+# Running the test :
 
 **1. Configure and run single test**
 
@@ -79,7 +72,7 @@ Open `test_wikipedia.py` file in `tests` folder:
 browserstack-sdk pytest -s tests/test_wikipedia.py
 ```
 
-## Notes
+# Notes
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
 - You can export the environment variables for the Username and Access Key of your BrowserStack account :
