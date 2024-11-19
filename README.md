@@ -1,17 +1,26 @@
-# PyTest BDD with Browserstack AppAutomate
+# BrowserStack Examples PyTest BDD AppAutomate
 
-PyTest Integration with BrowserStack.
+PyTest Integration with BrowserStack for Appium.
 
 ![BrowserStack Logo](https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780)
-### Requirements
 
-1. Python 3.7+
+### Introduction
+
+- This repository demonstrates an Appium test framework written in Pytest BDD (Behavior Driven Development). It leverages the power of Pytest and the pytest-bdd plugin to write and execute BDD-style tests for mobile applications. 
+The Appium script is designed for automating tests on the [sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk). The script has the ability to run tests sequentially or in parallel on BrowserStack.
+
+### Prerequisite
+
+- - Ensure you have Python 3.7+
     
     - For Windows, download latest python version from [here](https://www.python.org/downloads/windows/) and run the installer executable
     - For Mac and Linux, run `python --version` to see what python version is pre-installed. If you want a different version download from [here](https://www.python.org/downloads/)
 
-### Install the dependencies
+### Repository Setup
 
+- Clone the repository
+
+- Install dependencies 
 To install the dependencies, run the following command in project's base directory:
 
 - For Python 3
@@ -26,15 +35,9 @@ To install the dependencies, run the following command in project's base directo
     pip install -r requirements.txt
     ```
 
-## Getting Started
+- Upload the Wikipedia Sample Android App
 
-Getting Started with Pytest-BDD-Appium tests in Python on BrowserStack couldn't be easier!
-
-### Run your first test :
-
-**1. Upload your Android App**
-
-Upload your Android app (.apk or .aab file) to BrowserStack servers using our REST API. Here is an example cURL request :
+Upload the [sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk) (.apk or .aab file) to BrowserStack servers using our REST API. Here is an example cURL request :
 
 ```
 curl -u "YOUR_USERNAME:YOUR_ACCESS_KEY" \
@@ -44,10 +47,9 @@ curl -u "YOUR_USERNAME:YOUR_ACCESS_KEY" \
 
 Ensure that @ symbol is prepended to the file path in the above request. Please note the `app_url` value returned in the API response. We will use this to set the application under test while configuring the test later on.
 
-**Note**: If you do not have an .apk or .ipa file and are looking to simply try App Automate, you can download and test using our [sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk).
+### Running the test :
 
-
-**2. Configure and run your first single test**
+**1. Configure and run single test**
 
 Open `test_wikipedia.py` file in `tests` folder:
 
@@ -59,10 +61,10 @@ Open `test_wikipedia.py` file in `tests` folder:
 
 - Run the below command to execute a single test on BrowserStack AppAutomate:
     ```
-    pytest -s <path/to/your/test/file.py> 
+    pytest -s tests/test_wikipedia.py 
     ```
 
-**3. Configure and run your parallel test**
+**2. Configure and run parallel test**
 
 - In order to run tests in parallel across different configurations, Open `browserstack.yml` file
 
@@ -72,11 +74,19 @@ Open `test_wikipedia.py` file in `tests` folder:
 
 - Set the deviceName and platformVersion. You can refer our [Capability Generator](https://www.browserstack.com/app-automate/capabilities)
     
-- Run the below command to execute parallel Android test on BrowserStack AppAutomate:
+- Run the below command to execute parallel test on BrowserStack AppAutomate:
 ```
-browserstack-sdk pytest -s <path/to/your/test/file.py> 
+browserstack-sdk pytest -s tests/test_wikipedia.py
 ```
 
+## Notes
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
+
+- You can export the environment variables for the Username and Access Key of your BrowserStack account :
+```
+export BROWSERSTACK_USERNAME=<browserstack-username> &&
+export BROWSERSTACK_ACCESS_KEY=<browserstack-access-key> &&
+export BROWSERSTACK_APP_ID=<app_url or custom_id>
+```
 
 ---
