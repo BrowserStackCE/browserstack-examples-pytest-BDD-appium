@@ -57,7 +57,7 @@ browserstack-sdk pytest -s tests/test_wikipedia.py
 # Notes
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
-- You can export the environment variables for the Username, Access Key and App ID of your BrowserStack account.
+- You can export the environment variables for your BrowserStack account's Username and Access Key, along with the App ID.
 
     - For Mac and Linux: 
     ```
