@@ -6,9 +6,8 @@ PyTest Integration with BrowserStack for Appium.
 
 # Introduction
 
-This repository demonstrates an Appium test framework written in Pytest BDD (Behavior Driven Development). It leverages the power of Pytest and the pytest-bdd plugin to write and execute BDD-style tests for mobile applications. 
+This repository demonstrates an Appium test framework written in Pytest BDD (Behavior Driven Development) with parallel testing capabilities. It leverages the power of Pytest and the pytest-bdd plugin to write and execute BDD-style tests for mobile applications. 
 The Appium script is designed for automating tests on the [Wikipedia Sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk). 
-The script has the ability to run single or parallel test on BrowserStack.
 
 # Prerequisite
 
@@ -42,24 +41,7 @@ Ensure that @ symbol is prepended to the file path in the above request. Please 
 
 # Running the test :
 
-**1. Configure and run single test**
-
-Open `test_wikipedia.py` file in `tests` folder:
-
-- Replace `BROWSERSTACK_USERNAME` & `BROWSERSTACK_ACCESS_KEY` with your BrowserStack access credentials. Get your BrowserStack access credentials from [here](https://www.browserstack.com/accounts/settings)
-
-- Replace `bs://<app-id>` with the URL obtained from app upload step
-
-- Set the deviceName and platformVersion. You can refer our [Capability Generator](https://www.browserstack.com/app-automate/capabilities)
-
-- Run the below command to execute a single test on BrowserStack AppAutomate:
-    ```
-    pytest -s tests/test_wikipedia.py 
-    ```
-
-**2. Configure and run parallel test**
-
-- In order to run tests in parallel across different configurations, Open `browserstack.yml` file
+In order to run tests in parallel across different configurations, Open `browserstack.yml` file
 
 - Replace `BROWSERSTACK_USERNAME` & `BROWSERSTACK_ACCESS_KEY` with your BrowserStack access credentials. Get your BrowserStack access credentials from [here](https://www.browserstack.com/accounts/settings)
 
@@ -75,11 +57,19 @@ browserstack-sdk pytest -s tests/test_wikipedia.py
 # Notes
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
-- You can export the environment variables for the Username and Access Key of your BrowserStack account :
-```
-export BROWSERSTACK_USERNAME=<browserstack-username> &&
-export BROWSERSTACK_ACCESS_KEY=<browserstack-access-key> &&
-export BROWSERSTACK_APP_ID=<app_url or custom_id>
-```
+- You can export the environment variables for the Username, Access Key and App ID of your BrowserStack account.
+
+    - For Mac: 
+    ```
+    export BROWSERSTACK_USERNAME=<browserstack-username> &&
+    export BROWSERSTACK_ACCESS_KEY=<browserstack-access-key> &&
+    export BROWSERSTACK_APP_ID=<app_url or custom_id>
+    ```
+    - For Windows:
+    ```
+    set BROWSERSTACK_USERNAME=<browserstack-username> 
+    set BROWSERSTACK_ACCESS_KEY=<browserstack-access-key> 
+    set BROWSERSTACK_APP_ID=<app_url or custom_id>
+    ```
 
 ---
