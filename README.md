@@ -13,8 +13,8 @@ The Appium script is designed for automating tests on the [Wikipedia Sample Andr
 
 Ensure you have Python 3.6+
     
-    - For Windows, download latest python version from [here](https://www.python.org/downloads/windows/) and run the installer executable
-    - For Mac and Linux, run `python --version` to see what python version is pre-installed. If you want a different version download from [here](https://www.python.org/downloads/)
+- For Windows, download latest python version from [here](https://www.python.org/downloads/windows/) and run the installer executable
+- For Mac and Linux, run `python --version` to see what python version is pre-installed. If you want a different version download from [here](https://www.python.org/downloads/)
 
 # Repository Setup
 
@@ -59,7 +59,7 @@ browserstack-sdk pytest -s tests/test_wikipedia.py
 
 - You can export the environment variables for the Username, Access Key and App ID of your BrowserStack account.
 
-    - For Mac: 
+    - For Mac and Linux: 
     ```
     export BROWSERSTACK_USERNAME=<browserstack-username> &&
     export BROWSERSTACK_ACCESS_KEY=<browserstack-access-key> &&
